@@ -1,44 +1,51 @@
-{% set name = "<PLEASE ADD PKG NAME>" %}
-{% set version = "<PLEASE ADD PKG VERSION>" %}
+{% set name = "filecheck" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: <sha256>
+  - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+    sha256: ccb70500858e8f362f06d5c3e33c9c133785543ade50ddbeb9390681991f1b05
+  - url: https://github.com/AntonLydike/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
+    sha256: ba629d588a5d016a19e1d783f87c0e16cf48f6b97e24d2df417303052f745b31
+    folder: gh_src
 
 build:
   number: 0
+  skip: True  # [py<310]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  skip: True  # [py<38]
 
 requirements:
   host:
-    - python
     - pip
+    - python
+    - poetry-core
   run:
     - python
 
 test:
+  source_files:
+    - gh_src/tests
   imports:
-    - {{ name.replace('-', '.') }}
+    - filecheck
   requires:
     - pip
+    - pytest
   commands:
     - pip check
+    - pytest -v gh_src/tests
 
 about:
-  home: <PLEASE ADD HOME URL>
-  summary: <PLEASE ADD SUMMARY>
-  description: |
-    <PLEASE ADD DESCRIPTION>
-  license: <PLEASE ADD LICENSE>
-  license_family: <PLEASE ADD LICENSE_FAMILY>
-  license_file: <PLEASE_ADD_LICENSE_FILE>
-  dev_url: <PLEASE ADD DEV URL>
-  doc_url: <PLEASE ADD DOC URL>
+  home: https://github.com/AntonLydike/filecheck
+  license: Apache-2.0
+  license_family: Apache
+  license_file: LICENSE.txt
+  summary: A Python-native clone of LLVMs FileCheck tool
+  description: A Python-native clone of LLVMs FileCheck tool
+  dev_url: https://github.com/AntonLydike/filecheck
+  doc_url: https://github.com/AntonLydike/filecheck
 
 extra:
   recipe-maintainers:
