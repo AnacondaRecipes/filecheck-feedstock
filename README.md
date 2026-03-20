@@ -1,13 +1,13 @@
-About <pkg_name>-feedstock
+About filecheck-feedstock
 =======================
 
 Feedstock license: [BSD-3-Clause](LICENSE)
 
-Home: <home_url>
+Home: https://github.com/AntonLydike/filecheck
 
-Package license: <pkg_license>
+Package license: Apache Software License
 
-Summary: <pkg_summary>
+Summary: This project is the successor of [mull-project/FileCheck.py](https://github.com/mull-project/FileCheck.py).
 
 
 Current release info
@@ -15,19 +15,19 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-<pkg_name>-green.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/<pkg_name>.svg)](https://anaconda.org/anaconda/<pkg_name>) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-filecheck-green.svg)](https://anaconda.org/anaconda/filecheck) | [![Conda Downloads](https://img.shields.io/conda/dn/anaconda/filecheck.svg)](https://anaconda.org/anaconda/filecheck) | [![Conda Version](https://img.shields.io/conda/vn/anaconda/filecheck.svg)](https://anaconda.org/anaconda/filecheck) | [![Conda Platforms](https://img.shields.io/conda/pn/anaconda/filecheck.svg)](https://anaconda.org/anaconda/filecheck) |
 
-Installing <pkg_name>
+Installing filecheck
 ==================
 
-Installing `<pkg_name>` from the main channel can be achieved by:
+Installing `filecheck` from the main channel can be achieved by:
 
 ```
-conda install <pkg_name>
+conda install filecheck
 ```
 
-It is possible to list all of the versions of `<pkg_name>` available on your platform with `conda`:
+It is possible to list all of the versions of `filecheck` available on your platform with `conda`:
 
 ```
-conda search <pkg_name>
+conda search filecheck
 ```
